@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-charcoal text-white font-body antialiased; }
+  h1, h2, h3 { @apply font-display uppercase font-extrabold tracking-tight leading-[0.95]; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-brand; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.12em] transition duration-200 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none; }
+  .btn-primary { @apply btn bg-brand text-white hover:bg-white hover:text-charcoal; }
+  .btn-ghost { @apply btn border-2 border-white text-white hover:bg-white hover:text-charcoal; }
+  .eyebrow { @apply flex items-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-brand before:h-px before:w-8 before:bg-brand; }
+  .card { @apply border border-white/10 bg-charcoal-light transition duration-300 hover:border-brand/60; }
+  .field { @apply w-full border-2 border-white/15 bg-charcoal px-4 py-3 text-white placeholder:text-white/40 focus:border-brand focus:outline-none; }
+  .label { @apply mb-1.5 block text-xs font-bold uppercase tracking-[0.15em] text-white/70; }
+}
