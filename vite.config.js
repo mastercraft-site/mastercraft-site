@@ -143,5 +143,6 @@ function adminApi() {
 
 export default defineConfig({
   plugins: [react(), adminApi()],
+  base: '/', // Configured for custom domain deployment (e.g., yourshopname.com)
   build: { target: 'es2019', cssCodeSplit: true },
 });
