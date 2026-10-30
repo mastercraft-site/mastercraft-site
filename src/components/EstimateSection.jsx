@@ -102,6 +102,7 @@ export default function EstimateSection() {
                   <option value="Morning (6AM to 12PM)">Morning</option>
                   <option value="Afternoon (12PM to 5PM)">Afternoon</option>
                   <option value="Evening (5PM to Midnight)">Evening</option>
+                  <option value="Overnight (Midnight to 6AM)">Overnight</option>
                 </select>
               </div>
             </div>

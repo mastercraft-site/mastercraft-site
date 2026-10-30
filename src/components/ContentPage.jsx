@@ -28,7 +28,7 @@ export default function ContentPage({ page, onEstimate }) {
 
         {page.image && (
           <figure className="mx-auto mt-12 max-w-6xl px-5">
-            <img src={page.image} alt={page.imageAlt} width={page.image.includes('hero-storefront') ? 1600 : 1920} height={page.image.includes('hero-storefront') ? 1600 : 720} className="max-h-[32rem] w-full bg-charcoal-light object-contain" />
+            <img src={page.image} alt={page.imageAlt} width={page.imageWidth || 1920} height={page.imageHeight || 720} className="max-h-[32rem] w-full bg-charcoal-light object-contain" />
             <figcaption className="mt-3 text-base text-white/80">{page.imageAlt}</figcaption>
           </figure>
         )}

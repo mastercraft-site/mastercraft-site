@@ -38,7 +38,7 @@ export default function Hero({ onEstimate, rating }) {
           </div>
           <div>
             <dt className="text-xs uppercase tracking-[0.15em] text-white/60">Hours</dt>
-            <dd className="font-display text-4xl font-extrabold">6AM–12AM</dd>
+            <dd className="font-display text-4xl font-extrabold" aria-label="Open 24 hours a day, 7 days a week">24/7</dd>
           </div>
         </dl>
       </div>
