@@ -1,11 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { site } from '../config.js';
+import { ESTIMATE_SERVICES as SERVICES, MAX_ESTIMATE_FILES as MAX_FILES, MAX_ESTIMATE_FILE_BYTES as MAX_BYTES, submitEstimateRequest } from '../utils/submitEstimate.js';
 
-const SERVICES = ['Collision & Frame Repair', 'Custom Body & Paint', 'Mechanical & Diagnostics', 'Insurance Claim Help', 'Not Sure Yet'];
-const MAX_FILES = 10;
-const MAX_BYTES = 10 * 1024 * 1024;
 const EMPTY = { service: '', year: '', make: '', model: '', name: '', phone: '', email: '', callTime: '', details: '', sms: false, honey: '' };
-const FORM_ENDPOINT = `https://formsubmit.co/ajax/${site.email}`;
 
 const emailOk = (v) => /^\S+@\S+\.\S+$/.test(v);
 const phoneOk = (v) => v.replace(/\D/g, '').length >= 10;
@@ -71,24 +68,8 @@ export default function Estimate({ open, onClose }) {
     if (Object.keys(e).length) return;
     setStatus('sending');
 
-    const data = new FormData();
-    data.append('_subject', 'New Estimate Request: MasterCraft Website');
-    data.append('_captcha', 'false');
-    data.append('_template', 'table');
-    data.append('_honey', form.honey);
-    data.append('Service Needed', form.service);
-    data.append('Vehicle', `${form.year} ${form.make} ${form.model}`);
-    data.append('Customer Name', form.name);
-    data.append('Cell Phone', form.phone);
-    data.append('Email', form.email);
-    data.append('Best Time to Call', form.callTime || 'Any time');
-    data.append('Details', form.details);
-    data.append('SMS Consent', form.sms ? 'Yes, customer opted in to SMS' : 'No');
-    files.forEach((f) => data.append('Attachment', f));
-
     try {
-      const res = await fetch(FORM_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-      if (!res.ok) throw new Error('Request failed');
+      await submitEstimateRequest({ ...form, vehicle: `${form.year} ${form.make} ${form.model}`, files });
       setStatus('done');
     } catch {
       setStatus('error');

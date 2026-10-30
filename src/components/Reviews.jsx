@@ -1,17 +1,11 @@
 import { site } from '../config.js';
 
 const Stars = ({ n }) => (
-  <span className="text-brand" aria-label={`${n} out of 5 stars`}>
+  <span className="text-lg tracking-[0.12em] text-[#ffb020]" aria-label={`${n} out of 5 stars`}>
     {'★'.repeat(n)}
     <span className="text-white/25">{'★'.repeat(5 - n)}</span>
   </span>
 );
-
-function ReviewInvitation() {
-  return (
-    <a href={site.googleReviewUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost self-start md:self-auto">Leave a Google Review</a>
-  );
-}
 
 export default function Reviews({ reviews }) {
   if (reviews.length === 0) {
@@ -20,7 +14,7 @@ export default function Reviews({ reviews }) {
         <p className="eyebrow">Reviews</p>
         <h2 className="mt-4 text-5xl">Customer Reviews</h2>
         <p className="mt-6 text-white/60">Reviews are coming soon.</p>
-        <div className="mt-8"><ReviewInvitation /></div>
+        <a href={site.googleReviewUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost mt-8">Leave a review</a>
       </section>
     );
   }
@@ -28,33 +22,33 @@ export default function Reviews({ reviews }) {
   const average = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
 
   return (
-    <section id="reviews" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 md:py-28">
-      <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-        <div>
+    <section id="reviews" className="scroll-mt-24 bg-charcoal py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-5">
           <p className="eyebrow">Verified Local Reviews</p>
           <h2 className="mt-4 text-5xl md:text-6xl">What Drivers Say</h2>
-          <p className="mt-4 text-lg leading-relaxed text-white/85">
-            <span className="font-display text-2xl font-bold text-white">{average}</span> average across {reviews.length} reviews.
+          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/85">
+            <span className="font-bold text-white">{average}</span> average.{' '}
+            <a href={site.googleProfileUrl} target="_blank" rel="noopener noreferrer" className="underline decoration-white/40 underline-offset-4 hover:text-white">Read all reviews on Google</a>
+            {' '}&middot;{' '}
+            <a href={site.googleReviewUrl} target="_blank" rel="noopener noreferrer" className="underline decoration-white/40 underline-offset-4 hover:text-white">Leave a review</a>
           </p>
-        </div>
-        <ReviewInvitation />
-      </div>
 
-      <ul className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {reviews.map((r) => (
           <li key={r.id}>
-            <figure className="card flex h-full flex-col p-7">
+            <article className="card flex h-full flex-col gap-4 bg-charcoal-light p-7">
               <Stars n={r.rating} />
-              <blockquote className="mt-4 flex-1 text-lg leading-relaxed text-white/90">&ldquo;{r.text}&rdquo;</blockquote>
-              <figcaption className="mt-6 flex flex-wrap items-center gap-x-3 border-t border-white/10 pt-4 text-base text-white/85">
+              <blockquote className="flex-1 text-lg leading-relaxed text-white/90">&ldquo;{r.text}&rdquo;</blockquote>
+              <cite className="mt-auto flex flex-wrap items-center gap-x-2 pt-2 text-base not-italic text-white/80">
                 <span className="font-bold text-white">{r.name}</span>
                 {r.dateText && <span>&middot; {r.dateText}</span>}
-                {r.url && <a href={r.url} target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">Read on Google &rarr;</a>}
-              </figcaption>
-            </figure>
+                {r.url && <a href={r.url} target="_blank" rel="noopener noreferrer" className="text-red-400 hover:underline">Read on Google &rarr;</a>}
+              </cite>
+            </article>
           </li>
         ))}
       </ul>
+      </div>
     </section>
   );
 }

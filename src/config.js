@@ -12,7 +12,12 @@ export const site = {
   directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=38-21+23rd+Street%2C+Long+Island+City%2C+NY+11101',
   mapEmbedUrl: 'https://www.google.com/maps?q=38-21+23rd+Street+Long+Island+City+NY+11101&output=embed',
   googleReviewUrl: 'https://g.page/r/CTbgWKSTDGI3EBM/review',
-  googleProfileUrl: 'https://www.google.com/maps/search/?api=1&query=MasterCraft+Auto+Repair+%26+Collision+Long+Island+City',
+  googleProfileUrl: 'https://maps.app.goo.gl/Zo9CNj8TG4Apx3yt7',
+  owner: {
+    name: 'Syed Bukhari',
+    photo: '/images/hero-storefront.webp',
+    photoAlt: 'MasterCraft Auto Repair & Collision shop in Long Island City',
+  },
   social: {
     facebook: 'https://www.facebook.com/mastercraftautony',
     youtube: 'https://www.youtube.com/@mastercraftautony',

@@ -5,10 +5,12 @@ import Marquee from './components/Marquee.jsx';
 import Services from './components/Services.jsx';
 import Process from './components/Process.jsx';
 import BeforeAfter from './components/BeforeAfter.jsx';
+import Owner from './components/Owner.jsx';
 import Reviews from './components/Reviews.jsx';
 import Gallery from './components/Gallery.jsx';
 import Location from './components/Location.jsx';
 import Estimate from './components/Estimate.jsx';
+import EstimateSection from './components/EstimateSection.jsx';
 import StickyCta from './components/StickyCta.jsx';
 import Footer from './components/Footer.jsx';
 import ScrollDrive from './components/ScrollDrive.jsx';
@@ -39,8 +41,10 @@ export default function App() {
         <Services onEstimate={openEstimate} />
         <Process />
         <BeforeAfter items={beforeAfter} />
+        <Owner />
         <Reviews reviews={reviews} />
         <Gallery items={photos} />
+        <EstimateSection />
         <Location />
       </main>
       <Footer />
