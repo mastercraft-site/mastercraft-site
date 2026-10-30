@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { site } from '../config.js';
 
 const links = [
-  ['#services', 'Services'],
-  ['#process', 'Process'],
-  ['#before-after', 'Results'],
-  ['#reviews', 'Reviews'],
-  ['#location', 'Visit'],
+  ['/#services', 'Services'],
+  ['/#process', 'Process'],
+  ['/#before-after', 'Results'],
+  ['/reviews/', 'Reviews'],
+  ['/faq/', 'FAQ'],
+  ['/#location', 'Visit'],
 ];
 
 export default function Header({ onEstimate }) {
@@ -23,7 +24,7 @@ export default function Header({ onEstimate }) {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition duration-300 ${scrolled ? 'border-b border-white/10 bg-charcoal/95 backdrop-blur' : 'bg-transparent'}`}>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
-        <a href="#top" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <img src="/images/logo-badge.webp" alt={`${site.name} logo`} width="44" height="44" className="h-11 w-11 rounded-full object-cover" />
           <span className="font-display text-xl font-extrabold uppercase leading-none tracking-wide">
             {site.shortName}
@@ -31,7 +32,7 @@ export default function Header({ onEstimate }) {
           </span>
         </a>
 
-        <nav aria-label="Main" className="hidden items-center gap-8 lg:flex">
+        <nav aria-label="Main" className="hidden items-center gap-6 lg:flex">
           {links.map(([href, label]) => (
             <a key={href} href={href} className="relative text-xs font-bold uppercase tracking-[0.15em] text-white/85 transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all hover:text-white hover:after:w-full">
               {label}

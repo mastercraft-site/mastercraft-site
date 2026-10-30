@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.mastercraftautony.com/</loc>
+    <lastmod>2026-10-29</lastmod>
     <image:image><image:loc>https://www.mastercraftautony.com/images/hero-storefront.webp</image:loc></image:image>
     <image:image><image:loc>https://www.mastercraftautony.com/images/collision-audi-before.webp</image:loc></image:image>
     <image:image><image:loc>https://www.mastercraftautony.com/images/collision-audi-after.webp</image:loc></image:image>
@@ -15,5 +16,37 @@
     <image:image><image:loc>https://www.mastercraftautony.com/images/collision-red-sedan-after.webp</image:loc></image:image>
     <image:image><image:loc>https://www.mastercraftautony.com/images/collision-mazda-before.webp</image:loc></image:image>
     <image:image><image:loc>https://www.mastercraftautony.com/images/collision-mazda-after.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.mastercraftautony.com/collision-repair/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <image:image><image:loc>https://www.mastercraftautony.com/images/959694.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.mastercraftautony.com/insurance-claims/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <image:image><image:loc>https://www.mastercraftautony.com/images/Before-After-Jeep.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.mastercraftautony.com/mechanical-repair/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <image:image><image:loc>https://www.mastercraftautony.com/images/hero-storefront.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.mastercraftautony.com/body-paint/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <image:image><image:loc>https://www.mastercraftautony.com/images/GetLibraryImage.jpeg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.mastercraftautony.com/reviews/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mastercraftautony.com/about/</loc>
+    <lastmod>2026-10-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.mastercraftautony.com/faq/</loc>
+    <lastmod>2026-10-29</lastmod>
   </url>
 </urlset>

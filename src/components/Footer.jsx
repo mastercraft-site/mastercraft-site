@@ -1,4 +1,5 @@
 import { site } from '../config.js';
+import { pages } from '../data/pages.js';
 
 export default function Footer() {
   return (
@@ -29,6 +30,11 @@ export default function Footer() {
           </ul>
         </div>
       </div>
+      <nav aria-label="Explore MasterCraft" className="mx-auto max-w-6xl border-t border-white/15 px-5 py-8">
+        <ul className="grid gap-x-8 gap-y-4 text-base text-white/85 sm:grid-cols-2 lg:grid-cols-4">
+          {pages.filter((page) => page.kind !== 'home').map((page) => <li key={page.path}><a href={page.path} className="underline underline-offset-4 hover:text-white">{page.label}</a></li>)}
+        </ul>
+      </nav>
       <div className="border-t border-white/10 px-5 py-6 text-center text-sm leading-relaxed text-white/80">
         &copy; {new Date().getFullYear()} {site.name}. All rights reserved. &nbsp;|&nbsp; <a href="/privacy.html" className="underline hover:text-white">Privacy Policy</a>
         <p className="mx-auto mt-3 max-w-3xl leading-relaxed">No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>

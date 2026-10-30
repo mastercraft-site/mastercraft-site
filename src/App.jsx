@@ -14,15 +14,18 @@ import EstimateSection from './components/EstimateSection.jsx';
 import StickyCta from './components/StickyCta.jsx';
 import Footer from './components/Footer.jsx';
 import ScrollDrive from './components/ScrollDrive.jsx';
+import ContentPage from './components/ContentPage.jsx';
+import { getPage, pages } from './data/pages.js';
 import Admin from './admin/Admin.jsx';
 import gallery from './data/gallery.json';
 import reviews from './data/reviews.json';
 
-export default function App() {
+export default function App({ pathname = typeof window !== 'undefined' ? window.location.pathname : '/' }) {
   const [estimateOpen, setEstimateOpen] = useState(false);
 
-  if (typeof window !== 'undefined' && window.location.pathname === '/admin') return <Admin />;
+  if (/^\/admin\/?$/.test(pathname)) return <Admin />;
 
+  const page = getPage(pathname) || pages[0];
   const beforeAfter = gallery.filter((g) => g.kind === 'before-after');
   const photos = gallery.filter((g) => g.kind !== 'before-after');
   const rating = reviews.length ? (reviews.reduce((s, r) => s + r.rating, 0) / reviews.length).toFixed(1) : '–';
@@ -36,6 +39,8 @@ export default function App() {
       </a>
       <Header onEstimate={openEstimate} />
       <main id="main">
+        {page.kind === 'home' ? (
+          <>
         <Hero onEstimate={openEstimate} rating={rating} />
         <Marquee />
         <Services onEstimate={openEstimate} />
@@ -46,6 +51,8 @@ export default function App() {
         <Gallery items={photos} />
         <EstimateSection />
         <Location />
+          </>
+        ) : <ContentPage page={page} onEstimate={openEstimate} />}
       </main>
       <Footer />
       <StickyCta onEstimate={openEstimate} />

@@ -39,6 +39,7 @@ export default function Reviews({ reviews }) {
             <article className="card flex h-full flex-col gap-4 bg-charcoal-light p-7">
               <Stars n={r.rating} />
               <blockquote className="flex-1 text-lg leading-relaxed text-white/90">&ldquo;{r.text}&rdquo;</blockquote>
+              {/\.{3}\s*$|\u2026\s*$/.test(r.text) && <p className="text-sm leading-relaxed text-white/80">Review excerpt. <a href={r.url || site.googleProfileUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Read the full review on Google</a>.</p>}
               <cite className="mt-auto flex flex-wrap items-center gap-x-2 pt-2 text-base not-italic text-white/80">
                 <span className="font-bold text-white">{r.name}</span>
                 {r.dateText && <span>&middot; {r.dateText}</span>}

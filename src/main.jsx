@@ -4,10 +4,10 @@ import './index.css';
 import App from './App.jsx';
 
 const root = document.getElementById('root');
-const isAdmin = window.location.pathname === '/admin';
+const isAdmin = /^\/admin\/?$/.test(window.location.pathname);
 const application = (
   <React.StrictMode>
-    <App />
+    <App pathname={window.location.pathname} />
   </React.StrictMode>
 );
 
