@@ -1,1 +1,44 @@
-[]
+[
+	{
+		"id": "collision-audi",
+		"kind": "before-after",
+		"src": "/images/959694.jpg",
+		"alt": "Black Audi before and after front-end collision repair, with the damaged vehicle on the left and repaired vehicle on the right",
+		"caption": "Audi front-end collision repair"
+	},
+	{
+		"id": "collision-jeep",
+		"kind": "before-after",
+		"src": "/images/Before-After-Jeep.webp",
+		"alt": "White Jeep before and after rear-end collision repair, with the damaged vehicle on the left and repaired vehicle on the right",
+		"caption": "Jeep rear-end collision repair"
+	},
+	{
+		"id": "collision-acura",
+		"kind": "before-after",
+		"src": "/images/GetLibraryImage.jpeg",
+		"alt": "Gray Acura before and after front bumper and body repair, with the damaged vehicle on the left and repaired vehicle on the right",
+		"caption": "Acura front bumper and body repair"
+	},
+	{
+		"id": "collision-mustang",
+		"kind": "before-after",
+		"src": "/images/before-after-1920w.webp",
+		"alt": "Red Ford Mustang before and after front-end collision repair, with the damaged vehicle above and repaired vehicle below",
+		"caption": "Mustang front-end collision repair"
+	},
+	{
+		"id": "collision-red-sedan",
+		"kind": "before-after",
+		"src": "/images/471957983_18295198900237765_3695677779504136255_n.jpg",
+		"alt": "Red sedan before and after front bumper and fender repair, with the damaged vehicle above and repaired vehicle below",
+		"caption": "Front bumper and fender restoration"
+	},
+	{
+		"id": "collision-mazda",
+		"kind": "before-after",
+		"src": "/images/mazda-3-front-bumper-repair-before-after-oklahoma-city.webp",
+		"alt": "White Mazda before and after front bumper repair, with the damaged vehicle on the left and repaired vehicle on the right",
+		"caption": "Mazda front bumper repair"
+	}
+]

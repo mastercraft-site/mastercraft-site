@@ -17,4 +17,8 @@
   .card { @apply border border-white/10 bg-charcoal-light transition duration-300 hover:border-brand/60; }
   .field { @apply w-full border-2 border-white/15 bg-charcoal px-4 py-3 text-white placeholder:text-white/40 focus:border-brand focus:outline-none; }
   .label { @apply mb-1.5 block text-xs font-bold uppercase tracking-[0.15em] text-white/70; }
+  .photo-album { scrollbar-color: #c71920 #343434; }
+  .photo-album::-webkit-scrollbar { height: 12px; }
+  .photo-album::-webkit-scrollbar-track { background: #343434; }
+  .photo-album::-webkit-scrollbar-thumb { background: #c71920; border: 2px solid #343434; }
 }
