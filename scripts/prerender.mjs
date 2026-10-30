@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
@@ -105,9 +105,11 @@ try {
     schema['@graph'].push(pageEntity);
     setText(schemaElement, JSON.stringify(schema).replace(/</g, '\\u003c'));
 
-    const directory = join(outputDirectory, ...page.path.split('/').filter(Boolean));
-    await mkdir(directory, { recursive: true });
-    await writeFile(join(directory, 'index.html'), serialize(document));
+    const outputPath = page.path.endsWith('.html')
+      ? join(outputDirectory, page.path.slice(1))
+      : join(outputDirectory, ...page.path.split('/').filter(Boolean), 'index.html');
+    await mkdir(dirname(outputPath), { recursive: true });
+    await writeFile(outputPath, serialize(document));
 
     const imagePaths = page.kind === 'home'
       ? ['/images/hero-storefront.webp', ...gallery.flatMap((item) => [item.before, item.after].filter(Boolean))]

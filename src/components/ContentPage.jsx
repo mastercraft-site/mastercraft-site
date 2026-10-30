@@ -20,10 +20,10 @@ export default function ContentPage({ page, onEstimate }) {
           <p className="eyebrow">MasterCraft &middot; Long Island City, Queens</p>
           <h1 className="mt-5 max-w-4xl text-4xl sm:text-5xl lg:text-6xl">{page.heading}</h1>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/85">{page.intro}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          {page.kind !== 'privacy' && <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <button type="button" onClick={onEstimate} className="btn-primary">Request A Free Estimate</button>
             <a href={site.phoneHref} className="btn-ghost">Call {site.phoneDisplay}</a>
-          </div>
+          </div>}
         </div>
 
         {page.image && (
@@ -69,7 +69,7 @@ export default function ContentPage({ page, onEstimate }) {
           </ul>
         </nav>
       </article>
-      <EstimateSection />
+      {page.kind !== 'privacy' && <EstimateSection />}
     </>
   );
 }

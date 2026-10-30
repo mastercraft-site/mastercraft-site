@@ -32,7 +32,7 @@ export default function Footer() {
       </div>
       <nav aria-label="Explore MasterCraft" className="mx-auto max-w-6xl border-t border-white/15 px-5 py-8">
         <ul className="grid gap-x-8 gap-y-4 text-base text-white/85 sm:grid-cols-2 lg:grid-cols-4">
-          {pages.filter((page) => page.kind !== 'home').map((page) => <li key={page.path}><a href={page.path} className="underline underline-offset-4 hover:text-white">{page.label}</a></li>)}
+          {pages.filter((page) => page.kind !== 'home' && page.kind !== 'privacy').map((page) => <li key={page.path}><a href={page.path} className="underline underline-offset-4 hover:text-white">{page.label}</a></li>)}
         </ul>
       </nav>
       <div className="border-t border-white/10 px-5 py-6 text-center text-sm leading-relaxed text-white/80">
