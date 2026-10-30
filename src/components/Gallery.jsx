@@ -9,7 +9,7 @@ export default function Gallery({ items }) {
       <div className="mt-12 columns-1 gap-4 sm:columns-2 lg:columns-3">
         {items.map((item) => (
           <figure key={item.id} className="mb-4 break-inside-avoid overflow-hidden rounded-2xl border border-white/10 bg-charcoal-light">
-            <img src={item.src} alt={item.alt} loading="lazy" decoding="async" className="w-full transition duration-500 hover:scale-[1.03]" />
+            <img src={item.src} alt={item.alt || item.caption || 'Vehicle repair work at MasterCraft in Long Island City'} loading="lazy" decoding="async" className="w-full transition duration-500 hover:scale-[1.03]" />
             {item.caption && <figcaption className="p-4 text-sm text-white/70">{item.caption}</figcaption>}
           </figure>
         ))}

@@ -76,7 +76,7 @@ export default function EstimateSection() {
             <li className="border border-white/20 px-4 py-2">Progress photos during repair</li>
           </ul>
         </div>
-        <form ref={formRef} onSubmit={submit} aria-label="Request a free estimate" aria-busy={status === 'sending'} className="min-w-0 border border-white/15 bg-charcoal p-5 sm:p-8">
+        <form ref={formRef} onSubmit={submit} action={`https://formsubmit.co/${site.email}`} method="post" encType="multipart/form-data" aria-label="Request a free estimate" aria-busy={status === 'sending'} className="min-w-0 border border-white/15 bg-charcoal p-5 sm:p-8">
           <fieldset disabled={status === 'sending'} className="grid min-w-0 gap-5">
             <legend className="sr-only">Estimate request details</legend>
             <div className="grid gap-5 sm:grid-cols-2">
@@ -115,7 +115,7 @@ export default function EstimateSection() {
               <textarea id="estimate-details" name="details" rows={3} placeholder="Briefly describe the damage or problem" value={form.details} onChange={change} className={FIELD} />
             </label>
             <label className="grid min-w-0 gap-2 text-base font-bold text-white/85" htmlFor="estimate-photos">Damage photos
-              <input id="estimate-photos" name="photos" type="file" accept="image/jpeg,image/png,image/webp" multiple onChange={choosePhotos} aria-invalid={invalidField === 'photos'} aria-describedby={invalidField === 'photos' ? 'estimate-photo-limits estimate-error' : 'estimate-photo-limits'} className={`${FIELD} block overflow-hidden text-sm file:mr-3 file:border-0 file:bg-white file:px-3 file:py-2 file:text-sm file:font-semibold file:text-charcoal`} />
+              <input id="estimate-photos" name="attachment" type="file" accept="image/jpeg,image/png,image/webp" multiple onChange={choosePhotos} aria-invalid={invalidField === 'photos'} aria-describedby={invalidField === 'photos' ? 'estimate-photo-limits estimate-error' : 'estimate-photo-limits'} className={`${FIELD} block overflow-hidden text-sm file:mr-3 file:border-0 file:bg-white file:px-3 file:py-2 file:text-sm file:font-semibold file:text-charcoal`} />
             </label>
             <p id="estimate-photo-limits" className="-mt-3 text-sm text-white/80">Up to {MAX_ESTIMATE_FILES} photos, 10 MB each. JPG, PNG or WebP.</p>
             <label className="hidden" aria-hidden="true">Leave blank<input name="honey" tabIndex={-1} autoComplete="off" value={form.honey} onChange={change} /></label>

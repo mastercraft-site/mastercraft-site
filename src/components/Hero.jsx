@@ -8,7 +8,7 @@ export default function Hero({ onEstimate, rating }) {
         alt="MasterCraft Auto Repair & Collision storefront in Long Island City"
         width="1600"
         height="1600"
-        fetchPriority="high"
+        fetchpriority="high"
         className="absolute inset-0 -z-20 h-full w-full object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/30" />
@@ -19,8 +19,8 @@ export default function Hero({ onEstimate, rating }) {
       <div className="mx-auto w-full max-w-6xl px-5 pb-12 md:pb-20">
         <p className="eyebrow mb-6">Long Island City, NY</p>
         <h1 className="max-w-3xl text-6xl sm:text-7xl md:text-8xl">
-          Where NYC <br className="hidden sm:block" />
-          Drives <span className="text-brand">With Confidence</span>
+          Auto Repair &amp; Collision <br className="hidden sm:block" />
+          <span className="text-brand">In Long Island City</span>
         </h1>
         <p className="mt-6 max-w-xl text-lg text-white/80">
           Full-frame collision restoration, direct insurance claim handling, and expert auto repair under one roof.

@@ -7,7 +7,7 @@ function Comparison({ item, index = 0, enlarged = false }) {
         <img src={item.after} alt={`${item.caption || 'Collision repair'}: after restoration`} loading={index ? 'lazy' : 'eager'} draggable="false" className="absolute inset-0 h-full w-full object-contain" />
         <img
           src={item.before}
-          alt={`${item.caption || 'Collision repair'}: before damage`}
+          alt={`${item.caption || 'Collision repair'}: vehicle damage before repair`}
           loading={index ? 'lazy' : 'eager'}
           draggable="false"
           className="absolute inset-0 h-full w-full object-contain"
@@ -78,7 +78,7 @@ export default function BeforeAfter({ items }) {
                     title="View enlarged photo"
                     className="block w-full cursor-zoom-in focus-visible:outline focus-visible:-outline-offset-2"
                   >
-                    <img src={item.src} alt={item.alt} loading={i ? 'lazy' : 'eager'} decoding="async" className="block aspect-[4/3] w-full bg-charcoal object-contain" />
+                    <img src={item.src} alt={item.alt || item.caption || 'Collision repair before and after at MasterCraft'} loading={i ? 'lazy' : 'eager'} decoding="async" className="block aspect-[4/3] w-full bg-charcoal object-contain" />
                   </button>
                   )}
                   <figcaption className="flex min-h-24 flex-1 items-center justify-between gap-3 p-4 text-base leading-relaxed text-white/90 md:text-lg">
@@ -133,7 +133,7 @@ export default function BeforeAfter({ items }) {
             {selectedPhoto.before && selectedPhoto.after ? (
               <Comparison key={selectedPhoto.id} item={selectedPhoto} enlarged />
             ) : (
-              <img src={selectedPhoto.src} alt={selectedPhoto.alt} className="block h-[68svh] w-full object-contain" />
+              <img src={selectedPhoto.src} alt={selectedPhoto.alt || selectedPhoto.caption || 'Collision repair before and after at MasterCraft'} className="block h-[68svh] w-full object-contain" />
             )}
           </>
         )}

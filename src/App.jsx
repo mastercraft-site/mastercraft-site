@@ -21,7 +21,7 @@ import reviews from './data/reviews.json';
 export default function App() {
   const [estimateOpen, setEstimateOpen] = useState(false);
 
-  if (window.location.pathname === '/admin') return <Admin />;
+  if (typeof window !== 'undefined' && window.location.pathname === '/admin') return <Admin />;
 
   const beforeAfter = gallery.filter((g) => g.kind === 'before-after');
   const photos = gallery.filter((g) => g.kind !== 'before-after');
