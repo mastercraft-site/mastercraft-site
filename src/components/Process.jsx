@@ -15,9 +15,9 @@ export default function Process() {
         <ol className="mt-14 grid gap-px bg-white/10 md:grid-cols-4">
           {steps.map((s, i) => (
             <li key={s.t} className="group relative bg-charcoal p-7 transition duration-300 hover:bg-charcoal-light">
-              <span className="font-display text-7xl font-extrabold leading-none text-white/10 transition group-hover:text-brand/40">0{i + 1}</span>
+              <span className="font-display text-7xl font-extrabold leading-none text-white/80">0{i + 1}</span>
               <h3 className="mt-6 text-2xl">{s.t}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/70">{s.d}</p>
+              <p className="mt-3 text-lg leading-relaxed text-white/85">{s.d}</p>
             </li>
           ))}
         </ol>

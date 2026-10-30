@@ -13,23 +13,23 @@
   .btn { @apply inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-bold uppercase tracking-[0.12em] transition duration-200 active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none; }
   .btn-primary { @apply btn bg-brand text-white hover:bg-white hover:text-charcoal; }
   .btn-ghost { @apply btn border-2 border-white text-white hover:bg-white hover:text-charcoal; }
-  .eyebrow { @apply flex items-center gap-3 text-xs font-bold uppercase tracking-[0.3em] text-brand before:h-px before:w-8 before:bg-brand; }
+  .eyebrow { @apply flex items-center gap-3 text-sm font-bold uppercase tracking-[0.3em] text-red-400 before:h-px before:w-8 before:bg-brand; }
   .card { @apply border border-white/10 bg-charcoal-light transition duration-300 hover:border-brand/60; }
   .field { @apply w-full border-2 border-white/15 bg-charcoal px-4 py-3 text-white placeholder:text-white/40 focus:border-brand focus:outline-none; }
   .label { @apply mb-1.5 block text-xs font-bold uppercase tracking-[0.15em] text-white/70; }
-  .photo-album { scrollbar-color: #c71920 #343434; }
+  .photo-album { scrollbar-color: #d1d1d1 #343434; }
   .photo-album::-webkit-scrollbar { height: 12px; }
   .photo-album::-webkit-scrollbar-track { background: #343434; }
-  .photo-album::-webkit-scrollbar-thumb { background: #c71920; border: 2px solid #343434; }
+  .photo-album::-webkit-scrollbar-thumb { background: #d1d1d1; border: 2px solid #343434; }
 }
 
-.racing-site { --race-lane-width: 24px; padding-left: var(--race-lane-width); }
+.racing-site { --race-lane-width: 10px; padding-left: var(--race-lane-width); }
 .racing-site > header, .racing-site > .site-sticky-cta { left: var(--race-lane-width); }
 .race-sidebar { position: fixed; inset: 0 auto 0 0; z-index: 60; width: var(--race-lane-width); pointer-events: none; background: #181818; border-right: 1px solid #383838; }
-.race-track { position: absolute; inset: 10px 0; width: 12px; margin-inline: auto; background: repeating-linear-gradient(135deg, #c71920 0 12px, #080808 12px 24px); }
-.race-car { position: absolute; top: 0; left: 50%; width: 20px; height: 38px; transform: translate3d(-50%, 0, 0); filter: drop-shadow(0 2px 3px #000); }
+.race-track { position: absolute; inset: 10px 0; width: 6px; margin-inline: auto; background: repeating-linear-gradient(135deg, #c71920 0 12px, #080808 12px 24px); }
+.race-car { position: absolute; top: 0; left: 50%; width: 8px; height: 16px; transform: translate3d(-50%, 0, 0); filter: drop-shadow(0 2px 3px #000); }
 .race-car svg { display: block; width: 100%; height: 100%; }
-.race-finish { position: absolute; bottom: 0; left: 50%; width: 20px; height: 18px; transform: translateX(-50%); background: conic-gradient(#fff 25%, #111 0 50%, #fff 0 75%, #111 0) 0 0 / 8px 8px; border-block: 2px solid #fff; }
+.race-finish { position: absolute; bottom: 0; left: 50%; width: 8px; height: 12px; transform: translateX(-50%); background: conic-gradient(#fff 25%, #111 0 50%, #fff 0 75%, #111 0) 0 0 / 8px 8px; border-block: 2px solid #fff; }
 .race-track[data-finished="true"] .race-car { filter: drop-shadow(0 0 4px #ff3333); }
 
 @media (min-width: 768px) {

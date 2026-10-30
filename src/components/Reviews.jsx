@@ -33,7 +33,7 @@ export default function Reviews({ reviews }) {
         <div>
           <p className="eyebrow">Verified Local Reviews</p>
           <h2 className="mt-4 text-5xl md:text-6xl">What Drivers Say</h2>
-          <p className="mt-4 text-white/70">
+          <p className="mt-4 text-lg leading-relaxed text-white/85">
             <span className="font-display text-2xl font-bold text-white">{average}</span> average across {reviews.length} reviews.
           </p>
         </div>
@@ -45,8 +45,8 @@ export default function Reviews({ reviews }) {
           <li key={r.id}>
             <figure className="card flex h-full flex-col p-7">
               <Stars n={r.rating} />
-              <blockquote className="mt-4 flex-1 text-white/90 leading-relaxed">&ldquo;{r.text}&rdquo;</blockquote>
-              <figcaption className="mt-6 flex flex-wrap items-center gap-x-3 border-t border-white/10 pt-4 text-sm text-white/60">
+              <blockquote className="mt-4 flex-1 text-lg leading-relaxed text-white/90">&ldquo;{r.text}&rdquo;</blockquote>
+              <figcaption className="mt-6 flex flex-wrap items-center gap-x-3 border-t border-white/10 pt-4 text-base text-white/85">
                 <span className="font-bold text-white">{r.name}</span>
                 {r.dateText && <span>&middot; {r.dateText}</span>}
                 {r.url && <a href={r.url} target="_blank" rel="noopener noreferrer" className="text-brand hover:underline">Read on Google &rarr;</a>}

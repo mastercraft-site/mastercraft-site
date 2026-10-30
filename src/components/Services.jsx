@@ -49,13 +49,13 @@ export default function Services({ onEstimate }) {
               >
                 <span className="font-display text-2xl font-bold text-brand">0{i + 1}</span>
                 <span className="font-display text-3xl font-extrabold uppercase transition group-hover:text-brand md:text-4xl">{s.title}</span>
-                <span className="hidden text-white/65 md:block">{s.summary}</span>
-                <span aria-hidden="true" className={`grid h-10 w-10 place-items-center border-2 border-white/30 text-xl transition ${isOpen ? 'rotate-45 border-brand bg-brand' : ''}`}>+</span>
+                <span className="hidden text-lg leading-relaxed text-white/85 md:block">{s.summary}</span>
+                <span aria-hidden="true" className={`grid h-10 w-10 place-items-center border-2 border-white/50 text-xl transition ${isOpen ? 'border-brand bg-brand' : ''}`}>+</span>
               </button>
               {isOpen && (
                 <div className="grid gap-6 pb-8 pl-[4rem] md:pl-[7rem]">
-                  <p className="text-white/75 md:hidden">{s.summary}</p>
-                  <ul className="grid gap-2 text-white/85 sm:grid-cols-3 sm:gap-6">
+                  <p className="text-lg leading-relaxed text-white/85 md:hidden">{s.summary}</p>
+                  <ul className="grid gap-3 text-lg leading-relaxed text-white/90 sm:grid-cols-3 sm:gap-6">
                     {s.details.map((d) => <li key={d} className="border-l-2 border-brand pl-3">{d}</li>)}
                   </ul>
                 </div>
