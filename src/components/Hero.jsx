@@ -1,6 +1,6 @@
 import { site } from '../config.js';
 
-export default function Hero({ onEstimate, rating, reviewCount }) {
+export default function Hero({ onEstimate, rating }) {
   return (
     <section id="top" className="relative isolate flex min-h-[100svh] items-end overflow-hidden pt-24">
       <img
@@ -31,14 +31,10 @@ export default function Hero({ onEstimate, rating, reviewCount }) {
           <a href={site.phoneHref} className="btn-ghost">Call {site.phoneDisplay}</a>
         </div>
 
-        <dl className="mt-14 grid max-w-2xl grid-cols-3 gap-6 border-t border-white/15 pt-6">
+        <dl className="mt-14 grid max-w-md grid-cols-2 gap-6 border-t border-white/15 pt-6">
           <div>
             <dt className="text-xs uppercase tracking-[0.15em] text-white/60">Google rating</dt>
             <dd className="font-display text-4xl font-extrabold">{rating}<span className="text-brand">★</span></dd>
-          </div>
-          <div>
-            <dt className="text-xs uppercase tracking-[0.15em] text-white/60">Reviews shown</dt>
-            <dd className="font-display text-4xl font-extrabold">{reviewCount}</dd>
           </div>
           <div>
             <dt className="text-xs uppercase tracking-[0.15em] text-white/60">Hours</dt>

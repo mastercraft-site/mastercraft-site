@@ -34,7 +34,7 @@ export default function App() {
       </a>
       <Header onEstimate={openEstimate} />
       <main id="main">
-        <Hero onEstimate={openEstimate} rating={rating} reviewCount={reviews.length} />
+        <Hero onEstimate={openEstimate} rating={rating} />
         <Marquee />
         <Services onEstimate={openEstimate} />
         <Process />
