@@ -31,7 +31,7 @@ export default function Header({ onEstimate }) {
           </span>
         </a>
 
-        <nav aria-label="Main" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Main" className="hidden items-center gap-8 lg:flex">
           {links.map(([href, label]) => (
             <a key={href} href={href} className="relative text-xs font-bold uppercase tracking-[0.15em] text-white/85 transition after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brand after:transition-all hover:text-white hover:after:w-full">
               {label}
@@ -43,7 +43,7 @@ export default function Header({ onEstimate }) {
           <a href={site.phoneHref} className="btn-primary hidden !px-5 !py-3 sm:inline-flex">{site.phoneDisplay}</a>
           <button
             type="button"
-            className="grid h-11 w-11 place-items-center border-2 border-white/20 md:hidden"
+            className="grid h-11 w-11 place-items-center border-2 border-white/20 lg:hidden"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -58,7 +58,7 @@ export default function Header({ onEstimate }) {
       </div>
 
       {open && (
-        <nav aria-label="Mobile" className="border-t border-white/10 bg-charcoal px-5 py-2 md:hidden">
+        <nav aria-label="Mobile" className="border-t border-white/10 bg-charcoal px-5 py-2 lg:hidden">
           {links.map(([href, label]) => (
             <a key={href} href={href} onClick={() => setOpen(false)} className="block py-3 font-bold uppercase tracking-[0.15em]">
               {label}

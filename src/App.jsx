@@ -11,6 +11,7 @@ import Location from './components/Location.jsx';
 import Estimate from './components/Estimate.jsx';
 import StickyCta from './components/StickyCta.jsx';
 import Footer from './components/Footer.jsx';
+import ScrollDrive from './components/ScrollDrive.jsx';
 import Admin from './admin/Admin.jsx';
 import gallery from './data/gallery.json';
 import reviews from './data/reviews.json';
@@ -26,7 +27,8 @@ export default function App() {
   const openEstimate = () => setEstimateOpen(true);
 
   return (
-    <>
+    <div className="racing-site">
+      <ScrollDrive />
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-brand focus:px-4 focus:py-2">
         Skip to content
       </a>
@@ -44,6 +46,6 @@ export default function App() {
       <Footer />
       <StickyCta onEstimate={openEstimate} />
       <Estimate open={estimateOpen} onClose={() => setEstimateOpen(false)} />
-    </>
+    </div>
   );
 }
