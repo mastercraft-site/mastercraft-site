@@ -7,6 +7,12 @@ const Stars = ({ n }) => (
   </span>
 );
 
+function ReviewInvitation() {
+  return (
+    <a href={site.googleReviewUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost self-start md:self-auto">Leave a Google Review</a>
+  );
+}
+
 export default function Reviews({ reviews }) {
   if (reviews.length === 0) {
     return (
@@ -14,6 +20,7 @@ export default function Reviews({ reviews }) {
         <p className="eyebrow">Reviews</p>
         <h2 className="mt-4 text-5xl">Customer Reviews</h2>
         <p className="mt-6 text-white/60">Reviews are coming soon.</p>
+        <div className="mt-8"><ReviewInvitation /></div>
       </section>
     );
   }
@@ -30,7 +37,7 @@ export default function Reviews({ reviews }) {
             <span className="font-display text-2xl font-bold text-white">{average}</span> average across {reviews.length} reviews.
           </p>
         </div>
-        <a href={site.googleReviewUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost self-start md:self-auto">Leave a Google Review</a>
+        <ReviewInvitation />
       </div>
 
       <ul className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
