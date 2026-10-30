@@ -69,7 +69,7 @@ export const pages = [
   {
     path: '/reviews/', kind: 'reviews', lastmod: '2026-10-29', label: 'Reviews',
     title: 'Customer Reviews in Long Island City | MasterCraft Auto Repair',
-    description: 'Read customer feedback about MasterCraft collision repairs, mechanical work and insurance claim help in Long Island City. Find our Google reviews and review link.',
+    description: 'Read MasterCraft customer reviews for collision repair and insurance claim help in Long Island City, Queens. Visit our Google listing or leave a review.',
     heading: 'Customer Reviews From Long Island City Drivers',
     intro: 'Read customer feedback about repair work and insurance claim help at MasterCraft in Long Island City, Queens. The original Google listing is linked below for complete reviews and current reviewer information.',
     related: ['/collision-repair/', '/insurance-claims/', '/about/'],

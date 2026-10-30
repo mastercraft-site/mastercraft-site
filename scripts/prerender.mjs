@@ -39,6 +39,7 @@ try {
   const sitemapEntries = [];
 
   for (const page of pages) {
+    assert.ok(page.description.length >= 25 && page.description.length <= 160, `${page.path} meta description must be 25-160 characters; received ${page.description.length}.`);
     assert.match(page.lastmod, /^\d{4}-\d{2}-\d{2}$/, `Invalid lastmod for ${page.path}.`);
     const canonical = new URL(page.path, SITE_ORIGIN).href;
     const document = parse(template);
